@@ -5,7 +5,7 @@ import pandas as pd
 import requests
 from bs4 import BeautifulSoup
 from flask import render_template, request, redirect, url_for
-from config import headers
+from app.config import headers
 from app import utils
 
 @app.route("/")
