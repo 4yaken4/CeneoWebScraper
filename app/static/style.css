@@ -1,4 +1,200 @@
-/* Global Styles */
+/* podstawowe ustawienia */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fafafa;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Nagłówki */
+h1 {
+    color: #ff6600;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+h2 {
+    color: #444;
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: 600;
+}
+
+/* Layout strony */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px 40px;
+}
+
+/* Nawigacja boczna */
+ul {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 40px;
+}
+
+ul li {
+    margin-bottom: 15px;
+}
+
+ul li a {
+    text-decoration: none;
+    color: #555;
+    font-weight: 600;
+    padding: 8px 12px;
+    display: block;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+ul li a:hover,
+ul li a:focus {
+    background-color: #ff6600;
+    color: white;
+}
+
+/* Sekcja treści */
+.col-9 {
+    padding-left: 30px;
+}
+
+/* Formularz */
+form {
+    background-color: white;
+    padding: 25px 30px;
+    max-width: 400px;
+    margin: 0 auto 40px auto;
+    border-radius: 8px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+}
+
+form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #444;
+}
+
+form input[type="text"] {
+    width: 100%;
+    padding: 10px 12px;
+    margin-bottom: 20px;
+    border: 1.5px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+form input[type="text"]:focus {
+    border-color: #ff6600;
+    outline: none;
+}
+
+form button {
+    background-color: #ff6600;
+    color: white;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 5px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 1rem;
+}
+
+form button:hover {
+    background-color: #e05500;
+}
+
+/* Komunikaty błędów */
+p.error {
+    color: #cc0000;
+    font-weight: 600;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Tabela z opiniami */
+ table#opinions {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-size: 0.95rem;
+}
+
+table#opinions th,
+table#opinions td {
+    border: 1px solid #ddd;
+    padding: 10px 12px;
+    text-align: left;
+}
+
+table#opinions th {
+    background-color: #ff6600;
+    color: white;
+    font-weight: 600;
+}
+
+table#opinions tr:nth-child(even) {
+    background-color: #f9f9f9;
+} 
+
+/* Stopka */
+footer.container {
+    background-color: #222;
+    color: #ccc;
+    text-align: center;
+    padding: 15px 0;
+    margin-top: 50px;
+    font-size: 0.9rem;
+}
+
+/* Styl autora (np. w author.html) */
+.author {
+    max-width: 700px;
+    margin: 30px auto;
+    background-color: white;
+    padding: 20px 30px;
+    border-radius: 8px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+    color: #555;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+/* Responsywność */
+@media (max-width: 768px) {
+    .col-3, .col-9 {
+        padding-left: 0;
+    }
+    .col-3 {
+        margin-bottom: 30px;
+    }
+    ul {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 20px;
+    }
+    ul li {
+        margin-bottom: 0;
+    }
+    form {
+        max-width: 100%;
+        margin: 20px;
+    }
+}
+
+
+/* Global Styles
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -17,7 +213,7 @@ h2 {
     text-align: center;
 }
 
-/* Form Page Styling */
+/* Form Page Styling 
 form {
     width: 300px;
     margin-left: 170px;
@@ -50,7 +246,7 @@ form select {
     justify-content: space-between;
 }
 
-/* Index Page Styling */
+/* Index Page Styling 
 
 .list {
     margin-top: 30px;
@@ -76,4 +272,4 @@ form select {
 
 
 }
-
+*/

@@ -6,7 +6,7 @@
    {% endif %}
       <form action="{{url_for('extract')}}" method="post">
         <label for="product_id">Kod produktu</label>
-        <input type="text" name="product_id" id="product_id" required>
+        <input type="text" name="product_id" id="product_id" required class ="form-control">
         <button type="submit">Pobierz opinie</button>
    </form>
 {% endblock %}

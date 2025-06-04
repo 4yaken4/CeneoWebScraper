@@ -1,5 +1,54 @@
 {% extends 'base.html' %}
-{% block title %}  {% endblock %}
+{% block title %}Lista produktów{% endblock %}
 {% block content %}
+<ul class="list-group"></ul>
+    {% for product in products %}
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+            <a type="button" class="btn btn-ceneo" href="{{url_for('product', product_id=product_id)}}">{{product.product_id}}</a>
+            <span>{{product.product_name}}</span>
+            <span class="badge bg-primary rounded-pill">{{product.opinions_count}}</span>
+            <span class="badge bg-success rounded-pill">{{product.pros_count}}</span>
+            <span class="badge bg-danger rounded-pill">{{product.cons_count}}</span>
+            <span class="badge bg-ceneo rounded-pill">{{product.average_stars | round(2)}}</span>
+            <a type="button" class="btn btn-info" href="#">CSV</a>
+            <a type="button" class="btn btn-info" href="#">XLSX</a>
+            <a type="button" class="btn btn-info" href="#">JSON</a>
+        </li>
+    {% endfor %}
+</ul>
 
+
+
+
+<!-- <h3>Lista produktów</h3>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nazwa</th>
+            <th>Liczba opinii</th>
+            <th>Zalety</th>
+            <th>Wady</th>
+            <th>Średnia ocen</th>
+            <th>Pobierz</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for product in products %}
+        <tr>
+            <td>{{ product.id }}</td>
+            <td><a href="{{ url_for('product', product_id=product.id, product_name=product.name) }}">{{ product.name }}</a></td>
+            <td>{{ product.opinions_count }}</td>
+            <td>{{ product.pros_count }}</td>
+            <td>{{ product.cons_count }}</td>
+            <td>{{ product.avg_rating or 'Brak danych' }}</td>
+            <td>
+                <a href="{{ url_for('static', filename='opinions/' + product.id + '.json') }}" download>JSON</a> |
+                <a href="{{ url_for('download_csv', product_id=product.id) }}">CSV</a> |
+                <a href="{{ url_for('download_xlsx', product_id=product.id) }}">XLSX</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table> -->
 {% endblock %}
