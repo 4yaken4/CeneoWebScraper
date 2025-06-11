@@ -1,16 +1,80 @@
 {% extends 'base.html' %}
-{% block title %} Opis projektu {% endblock %}
+
+{% block title %}Opis projektu{% endblock %}
+{% block header_title %}Opis projektu{% endblock %}
+
 {% block content %}
-<div>
-<ol class="list">
-    <li>Cel aplikacji</li>
-    <!--- Aplikacja ma na celu pobieranie i przetwarzanie danych podanych przez użytkownika produktów ze strony www.ceneo.pl ---->
-    <li>Opis działania aplikacji</li>
-    <!------- -------->
-    <li>Zastosowane biblioteki</li>
-    <!------- -------->
-    <li>Zastosowane podejścia</li>
-    <!------- -------->
-</ol>
+<div class="container">
+    <div class="row g-4">
+        <!-- Cel aplikacji -->
+        <div class="col-12 col-md-6">
+            <div class="card shadow-sm h-100">
+                <div class="card-header bg-primary text-white">
+                    <h5 class="mb-0">Cel aplikacji</h5>
+                </div>
+                <div class="card-body">
+                    <p>
+                        Aplikacja służy do pobierania i analizowania opinii użytkowników o produktach z <a href="https://www.ceneo.pl" target="_blank">Ceneo.pl</a>.
+                        Umożliwia użytkownikowi łatwe zebranie i wizualizację danych dotyczących wybranego produktu.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Opis działania -->
+        <div class="col-12 col-md-6">
+            <div class="card shadow-sm h-100">
+                <div class="card-header bg-success text-white">
+                    <h5 class="mb-0">Opis działania aplikacji</h5>
+                </div>
+                <div class="card-body">
+                    <ul>
+                        <li>Użytkownik wprowadza ID produktu z Ceneo.</li>
+                        <li>Aplikacja pobiera opinie i zapisuje je jako pliki JSON oraz CSV.</li>
+                        <li>Możliwość przeglądania danych w tabeli z sortowaniem i filtrowaniem.</li>
+                        <li>Dostępne wykresy przedstawiające statystyki opinii.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Zastosowane biblioteki -->
+        <div class="col-12 col-md-6">
+            <div class="card shadow-sm h-100">
+                <div class="card-header bg-warning text-dark">
+                    <h5 class="mb-0">Zastosowane biblioteki</h5>
+                </div>
+                <div class="card-body">
+                    <ul>
+                        <li><code>Flask</code> – backend aplikacji</li>
+                        <li><code>requests</code> – pobieranie danych z Ceneo</li>
+                        <li><code>BeautifulSoup</code> – parsowanie HTML</li>
+                        <li><code>pandas</code> – analiza i zapis danych</li>
+                        <li><code>matplotlib</code>, <code>seaborn</code> – tworzenie wykresów</li>
+                        <li><code>DataTables</code> – dynamiczne tabele w interfejsie</li>
+                        <li><code>Bootstrap</code> – stylizacja i układ</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Podejścia -->
+        <div class="col-12 col-md-6">
+            <div class="card shadow-sm h-100">
+                <div class="card-header bg-secondary text-white">
+                    <h5 class="mb-0">Zastosowane podejścia</h5>
+                </div>
+                <div class="card-body">
+                    <ul>
+                        <li>Architektura MVC</li>
+                        <li>Walidacja danych wejściowych</li>
+                        <li>Czyste oddzielenie logiki i widoków</li>
+                        <li>Responsywny, lekki interfejs</li>
+                        <li>Obsługa błędów i logowanie działań</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 {% endblock %}

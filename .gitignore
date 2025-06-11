@@ -175,4 +175,5 @@ cython_debug/
 
 ## Ceneo Web Scraper
 app/data/
+app/static/images/charts
 config.py

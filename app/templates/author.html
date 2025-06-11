@@ -1,12 +1,24 @@
 {% extends 'base.html' %}
-{% block title %} O Autorze{% endblock %}
+{% block title %}O autorze{% endblock %}
+{% block header_title %}O autorze{% endblock %}
+
 {% block content %}
-    <div>
-        <p class="author">
-        Student pierwszego roku Informatyki Stosowanej na Uniwersytecie Ekonomicznym w Krakowie.
-        Projekt został przygotowany w ramach pracy na zajęciach "Programowanie Komputerów" w 2. semestrze nauki.
-        Aplikacja ma na celu przedstawienie zdobytych dotąd umiejętności programistycznych studenta.
+<div style="display: flex; gap: 40px; align-items: center; flex-wrap: wrap;">
+    <!-- Tekst z Twoim stylem -->
+    <div class="author">
+        <h4>Autor projektu</h4>
+        <p>
+            Student pierwszego roku Informatyki Stosowanej na Uniwersytecie Ekonomicznym w Krakowie.
+            <br><br>
+            Projekt został przygotowany w ramach zajęć <strong>„Programowanie Komputerów”</strong> w 2. semestrze studiów.
+            <br><br>
+            Aplikacja ma na celu zaprezentowanie zdobytej wiedzy i umiejętności z zakresu programowania aplikacji webowych w Pythonie z użyciem frameworka Flask.
         </p>
     </div>
 
+    <!-- Zdjęcie -->
+    <div style="max-width: 300px;">
+        <img src="{{ url_for('static', filename='author.png') }}" alt="Zdjęcie autora" class="img-fluid rounded" style="width: 100%; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
+    </div>
+</div>
 {% endblock %}
