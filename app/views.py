@@ -2,18 +2,18 @@
 from app import app
 
 # IMPORTY BIBLIOTEK STANDARDOWYCH I ZEWNĘTRZNYCH
-import os            # do operacji na plikach i folderach
-import json          # do zapisu i odczytu danych w formacie JSON
-import requests      # do wysyłania zapytań HTTP (np. pobieranie stron z Ceneo)
-import pandas as pd  # do analizy i przetwarzania danych tabelarycznych
-from bs4 import BeautifulSoup  # do parsowania HTML i ekstrakcji danych ze stron
-from matplotlib import pyplot as plt  # do tworzenia wykresów (słupkowych, kołowych)
-from flask import render_template, request, redirect, url_for, send_file, jsonify  # funkcje Flask do tworzenia widoków i obsługi HTTP
-from app.config import headers  # własny plik konfiguracyjny z nagłówkami HTTP
-from app import utils  # własny moduł z funkcjami pomocniczymi (np. extract_feature, selectors)
-import io              # do tworzenia buforów danych (CSV, XLSX) w pamięci RAM
+import os                                                                            # do operacji na plikach i folderach
+import json                                                                          # do zapisu i odczytu danych w formacie JSON
+import requests                                                                      # do wysyłania zapytań HTTP (np. pobieranie stron z Ceneo)
+import pandas as pd                                                                  # do analizy i przetwarzania danych tabelarycznych
+from bs4 import BeautifulSoup                                                        # do parsowania HTML i ekstrakcji danych ze stron
+from matplotlib import pyplot as plt                                                 # do tworzenia wykresów (słupkowych, kołowych)
+from flask import render_template, request, redirect, url_for, send_file, jsonify    # funkcje Flask do tworzenia widoków i obsługi HTTP
+from app.config import headers                                                       # własny plik konfiguracyjny z nagłówkami HTTP
+from app import utils                                                                # własny moduł z funkcjami pomocniczymi (np. extract_feature, selectors)
+import io                                                                            # do tworzenia buforów danych (CSV, XLSX) w pamięci RAM
 import matplotlib
-matplotlib.use('Agg') # Ustawienie backendu Matplotlib na tryb bez interfejsu graficznego (dla serwera)
+matplotlib.use('Agg')                                                                # Ustawienie backendu Matplotlib na tryb bez interfejsu graficznego (dla serwera)
 
 # STRONA GŁÓWNA APLIKACJI
 @app.route("/")
@@ -263,10 +263,13 @@ def export_product(product_id, format):
     else:
         return "Unsupported format", 400         # kod HTTP 400 = Bad Request
 
+
+
 # FUNKCJA POMOCNICZA - POBRANIE DANYCH O OPINIACH DLA PRODUKTU
 # (przyjmuje ID produktu i zwraca listę opinii (słowników) jeśli plik istnieje, w przeciwnym razie zwraca pustą listę)
 def get_product_data(product_id):
     file_path = f"./app/data/opinions/{product_id}.json"
+    
     # sprawdzamy czy plik istnieje
     if os.path.exists(file_path):
         # jeśli tak, otwieramy i wczytujemy dane JSON jako listę słowników
