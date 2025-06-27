@@ -256,8 +256,16 @@ def export_product(product_id, format):
         )
 
     # EKSPORT DO JSON
+    # elif format == 'json':
+    #     return jsonify(data)        # automatycznie ustawia Content-Type na application/json
+    
     elif format == 'json':
-        return jsonify(data)        # automatycznie ustawia Content-Type na application/json
+        return send_file(
+            io.BytesIO(json.dumps(data, indent=2, ensure_ascii=False).encode('utf-8')),
+            mimetype='application/json',
+            as_attachment=True,
+            download_name=f'product_{product_id}.json'
+    )
 
     # OBSŁUGA NIEOBSŁUGIWANEGO FORMATU
     else:
@@ -277,3 +285,6 @@ def get_product_data(product_id):
             return json.load(jf)
     else:
         return []
+
+
+
